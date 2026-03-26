@@ -16,7 +16,7 @@ const DEFAULTS = {
 } as const;
 
 /**
- * Main entry point for the nodoo package.
+ * Main entry point for the codoo package.
  *
  * @example
  * ```ts

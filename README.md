@@ -1,12 +1,12 @@
-# nodoo
+# codoo
 
 > Type-safe JSON-RPC and XML-RPC client for Odoo — works with Node.js, Next.js, React and any modern JS runtime.
 
-[![npm version](https://img.shields.io/npm/v/nodoo)](https://www.npmjs.com/package/nodoo)
-[![CI](https://github.com/vvhybe/nodoo/actions/workflows/ci.yml/badge.svg)](https://github.com/vvhybe/nodoo/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](file:///home/whybe/projects/nodoo/LICENSE)
-[![Contributing](https://img.shields.io/badge/Contributing-Standard-blue.svg)](file:///home/whybe/projects/nodoo/CONTRIBUTING.md)
-[![Security](https://img.shields.io/badge/Security-Policy-red.svg)](file:///home/whybe/projects/nodoo/SECURITY.md)
+[![npm version](https://img.shields.io/npm/v/codoo)](https://www.npmjs.com/package/codoo)
+[![CI](https://github.com/vvhybe/codoo/actions/workflows/ci.yml/badge.svg)](https://github.com/vvhybe/codoo/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributing](https://img.shields.io/badge/Contributing-Standard-blue.svg)](CONTRIBUTING.md)
+[![Security](https://img.shields.io/badge/Security-Policy-red.svg)](SECURITY.md)
 
 ---
 
@@ -32,11 +32,11 @@
 ## Installation
 
 ```bash
-npm install nodoo
+npm install codoo
 # or
-pnpm add nodoo
+pnpm add codoo
 # or
-yarn add nodoo
+yarn add codoo
 ```
 
 ---
@@ -44,7 +44,7 @@ yarn add nodoo
 ## Quick start
 
 ```ts
-import { OdooConnect } from 'nodoo';
+import { OdooConnect } from 'codoo';
 
 // Option A: factory method (authenticates immediately)
 const odoo = await OdooConnect.connect({
@@ -169,7 +169,7 @@ orm.callMethod<T>(model, method, args?, kwargs?, context?): Promise<T>
 Domains follow Odoo's standard domain format:
 
 ```ts
-import type { OdooDomain } from 'nodoo';
+import type { OdooDomain } from 'codoo';
 
 const domain: OdooDomain = [
   ['is_company', '=', true],
@@ -191,7 +191,7 @@ Supported leaf operators: `=`, `!=`, `>`, `>=`, `<`, `<=`, `like`, `ilike`, `not
 ### Typed records
 
 ```ts
-import type { TypedOdooRecord } from 'nodoo';
+import type { TypedOdooRecord } from 'codoo';
 
 interface ResPartner {
   name: string;
@@ -270,7 +270,7 @@ import {
   OdooNetworkError,
   OdooTimeoutError,
   OdooRpcError,
-} from 'nodoo';
+} from 'codoo';
 
 try {
   await odoo.orm.create('res.partner', { name: '' });
@@ -293,7 +293,7 @@ try {
 
 ```ts
 // lib/odoo.ts (server-only)
-import { OdooConnect } from 'nodoo';
+import { OdooConnect } from 'codoo';
 
 let _client: OdooConnect | null = null;
 
@@ -348,7 +348,7 @@ const result = await odoo.xmlRpc.executeKw(
 ### ORM commands (One2many / Many2many)
 
 ```ts
-import type { OdooCommand } from 'nodoo';
+import type { OdooCommand } from 'codoo';
 
 await odoo.orm.write('sale.order', [orderId], {
   order_line: [
@@ -374,7 +374,7 @@ ODOO_API_KEY=your-api-key
 
 ---
 
-Please see [CONTRIBUTING.md](file:///home/whybe/projects/nodoo/CONTRIBUTING.md) for details on how to get started.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started.
 
 Please follow the [Conventional Commits](https://www.conventionalcommits.org/) format.
 
@@ -384,9 +384,9 @@ Please follow the [Conventional Commits](https://www.conventionalcommits.org/) f
 
 To ensure a healthy and welcoming community, we adhere to the following standards:
 
-- [Code of Conduct](file:///home/whybe/projects/nodoo/CODE_OF_CONDUCT.md)
-- [Security Policy](file:///home/whybe/projects/nodoo/SECURITY.md)
-- [Contributing Guidelines](file:///home/whybe/projects/nodoo/CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
 
 ---
 
@@ -395,11 +395,11 @@ To ensure a healthy and welcoming community, we adhere to the following standard
 - [ ] `ReportService` — render and download PDF/XLSX reports
 - [ ] `WebsocketService` — Odoo bus real-time subscriptions
 - [ ] Batch request support (single HTTP round-trip for multiple calls)
-- [ ] React hooks package (`nodoo-react`)
+- [ ] React hooks package (`codoo-react`)
 - [ ] Model type generator from `fields_get` output
 
 ---
 
 ## License
 
-MIT © [whybe](file:///home/whybe/projects/nodoo/LICENSE)
+MIT © [whybe](LICENSE)

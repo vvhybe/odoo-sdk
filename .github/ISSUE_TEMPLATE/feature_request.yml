@@ -1,5 +1,5 @@
 name: Feature Request 💡
-description: Suggest an idea for Nodoo
+description: Suggest an idea for Codoo
 labels: ["enhancement"]
 body:
   - type: textarea

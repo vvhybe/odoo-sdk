@@ -1,12 +1,12 @@
-# Contributing to Nodoo
+# Contributing to Codoo
 
-First off, thank you for considering contributing to Nodoo! It's people like you that make Nodoo such a great tool.
+First off, thank you for considering contributing to Codoo! It's people like you that make Codoo such a great tool.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for Nodoo. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through submitting a bug report for Codoo. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
 - **Check for existing issues**: Before you create a new issue, please check if the issue has already been reported.
 
@@ -42,4 +42,4 @@ If you have an idea for a new feature or improvement:
 
 ## Legal
 
-By contributing to Nodoo, you agree that your contributions will be licensed under its [MIT License](LICENSE).
+By contributing to Codoo, you agree that your contributions will be licensed under its [MIT License](LICENSE).

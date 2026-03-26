@@ -1,5 +1,5 @@
 name: Bug Report 🐛
-description: Report a bug in Nodoo library
+description: Report a bug in Codoo library
 labels: ["bug"]
 body:
   - type: markdown
