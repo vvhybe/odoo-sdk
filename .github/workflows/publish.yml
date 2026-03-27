@@ -110,36 +110,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract changelog for this version
-        id: changelog
-        run: |
-          VERSION="${GITHUB_REF_NAME#v}"
-          # Extract section between this version and the previous one
-          NOTES=$(awk "/^## \[$VERSION\]/{found=1; next} found && /^## \[/{exit} found{print}" CHANGELOG.md)
-          if [ -z "$NOTES" ]; then
-            NOTES="See [CHANGELOG.md](CHANGELOG.md) for details."
-          fi
-          echo "notes<<EOF" >> $GITHUB_OUTPUT
-          echo "$NOTES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: "@vvhybe/odoo-client ${{ github.ref_name }}"
+          generate_release_notes: true
           body: |
-            ## What's changed
-
-            ${{ steps.changelog.outputs.notes }}
-
-            ---
-
             **Install**
             ```bash
             npm install @vvhybe/odoo-client@${{ needs.verify.outputs.version }}
             ```
-
-            **Full changelog**: https://github.com/vvhybe/@vvhybe/odoo-client/blob/main/CHANGELOG.md
           draft: false
           prerelease: ${{ contains(github.ref_name, '-') }}
